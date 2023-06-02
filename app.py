@@ -14,11 +14,6 @@ cors = CORS(app)
 
 
 
-cross_origin(
-origins = '*',
-methods = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT']
-)
-
 
 
 # MongoDB connection
@@ -137,7 +132,7 @@ def check_user(wallet):
 
 
 @app.route('/next/', methods=['GET'])
-@cross_origin()
+
 def getnext():
     try:
       
@@ -177,7 +172,7 @@ def getnext():
         return jsonify({"status" : False,"error" : "Internal server error", "data":""})
 
 @app.route('/next-10/', methods=['GET'])
-@cross_origin()
+
 def getnext_10():
     try:
         from_symbol = 'BTC'
